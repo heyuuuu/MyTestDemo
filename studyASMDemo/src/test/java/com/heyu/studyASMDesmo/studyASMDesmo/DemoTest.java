@@ -1,7 +1,7 @@
 package com.heyu.studyASMDesmo.studyASMDesmo;
 
-import jdk.internal.org.objectweb.asm.*;
 import org.junit.Test;
+import org.objectweb.asm.*;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 public class DemoTest extends ClassLoader{
 
 	@Test
-	public void demoTest() throws IOException,InstantiationException,IllegalAccessException,InvocationTargetException{
+	public void demoTest() throws IOException, IllegalAccessException, InstantiationException, InvocationTargetException {
 		ClassReader cr = new ClassReader(HelloWorld.class.getName());
 		ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_MAXS);
 		CustomVistor cv = new CustomVistor(Opcodes.ASM4,cw);
